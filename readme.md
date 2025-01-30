@@ -4,24 +4,25 @@ This project implements a Python script that integrates with the Gmail API to fe
 
 ## Features
 - Authenticate and interact with Gmail API using OAuth 2.0
-- Fetch emails from the inbox and store them in an SQLite database
+- Fetch emails from the inbox and store them in a PostgreSQL database
 - Process emails based on rules defined in a JSON file
 - Apply actions such as marking emails as read or moving them to specific folders
 - Unit tests for database operations, rule application, and API interactions
 
 ## Prerequisites
 Before running the script, ensure you have the following installed:
-- Python 3.7+
+- Python 3.9+
 - `pip install -r requirements.txt` (for dependencies)
 - Google Cloud Project with Gmail API enabled
 - OAuth 2.0 credentials (`credentials.json` file)
 
 ## Setup Instructions
 
-### 1. Clone the Repository
+### 1. Create Python Env
+[Refer here](https://realpython.com/intro-to-pyenv/) to install and setup pyenv
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+pyenv virtualenv python-version(ex: 3.9.10) gmail_search
+pyenv activate gmail_search
 ```
 
 ### 2. Install Dependencies
@@ -34,9 +35,9 @@ pip install -r requirements.txt
 - Place `credentials.json` in the project root directory
 - Run the script once to authenticate and generate `token.pickle`
 
-### 4. Create SQLite Database
+### 4. Create PostgreSQL Database
 ```bash
-python -c "import gmail_search; gmail_search.setup_database()"
+python -c "import db; db.setup_database()"
 ```
 
 ### 5. Define Email Processing Rules
@@ -71,12 +72,15 @@ python -m unittest gmail_search_unit_test.py
 ## Project Structure
 ```
 .
+├── db.py                        # db related methods
+├── config.py                    # file contains db config
 ├── gmail_search.py              # Main script
 ├── gmail_search_unit_test.py    # Unit tests
 ├── rules.json                   # Email filtering rules
-├── credentials.json             # OAuth 2.0 credentials (not included in repo)
+├── credentials.json             # OAuth 2.0 credentials (Download and place it here)
 ├── token.pickle                 # Stored authentication token (generated at runtime)
 ├── requirements.txt             # Required dependencies
+├── env_sample.txt               # sample .env file
+├── .gitignore                   # git ignore file
 ├── README.md                    # Documentation
 ```
-
