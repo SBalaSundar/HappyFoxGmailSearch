@@ -1,0 +1,12 @@
+{
+  "rules": [
+    {
+      "conditions": [
+        { "field": "From", "predicate": "contains", "value": "example.com" },
+        { "field": "Subject", "predicate": "contains", "value": "Invoice" }
+      ],
+      "condition_type": "All",
+      "actions": ["mark_as_read"]
+    }
+  ]
+}
