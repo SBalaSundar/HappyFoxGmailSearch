@@ -86,8 +86,8 @@ python -m unittest gmail_search_unit_test.py
 ```
 
 ## Video Presentation
-[Functionality Test Video](https://youtu.be/Hv3KaogjJcQ)
+[Functionality Test Video](https://www.youtube.com/watch?v=Hv3KaogjJcQ)
 
 ## Functionality Test Video
 
-[Presentation Video](https://youtu.be/yUEynjJ2FVI)
+[Presentation Video](https://www.youtube.com/watch?v=yUEynjJ2FVI)
